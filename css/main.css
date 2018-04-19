@@ -1,0 +1,145 @@
+/*
+000   - 600px:  Phone
+600px - 900px:  Tablet portrait
+900px - 1200px: Tablet landscape
+[1200px - 1800px] is our normal styles apply.
+1800px + :      Big desktop
+
+$breakpoint argument choices:
+- phone
+- tab-port
+- tab-land
+- big-desktop
+
+1em = 16px
+
+ORDER: Base + typography > General layout + grid > Page layout> Components
+*/
+/* --- For Animation --- */
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-10rem); }
+  80% {
+    transform: translateX(1rem); }
+  100% {
+    opacity: 1;
+    transform: translate(0); } }
+
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(10rem); }
+  80% {
+    transform: translateX(-1rem); }
+  100% {
+    opacity: 1;
+    transform: translate(0); } }
+
+@keyframes movieInbottom {
+  0% {
+    opacity: 0;
+    transform: translateY(3rem); }
+  80% {
+    transform: translateY(-1rem); }
+  100% {
+    opacity: 1;
+    transform: translate(0); } }
+
+*,
+*:after,
+*:before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; }
+
+html {
+  font-size: 62.5%;
+  /* we know that, 1rem = 10px, default font-size: 16px */ }
+
+body {
+  box-sizing: border-box;
+  background-color: #E7E6E6; }
+
+.heading-primary {
+  color: darkgreen; }
+
+.row {
+  max-width: 100%;
+  margin: 0 auto; }
+  .row:not(:last-child) {
+    margin-bottom: 8rem; }
+  .row::after {
+    content: "";
+    display: table;
+    clear: both; }
+  .row [class^="col-"] {
+    float: left; }
+    .row [class^="col-"]:not(:last-child) {
+      margin-right: 0.1rem; }
+  .row .col-1-of-2 {
+    width: calc((100% - 0.1rem) / 2); }
+  .row .col-1-of-3 {
+    width: calc((100% - 2 * 0.1rem) / 3); }
+  .row .col-2-of-3 {
+    width: calc(2 * ((100% - 2 * 0.1rem) / 3 ) + 0.1rem); }
+  .row .col-1-of-4 {
+    width: calc((100% - 3 * 0.1rem) / 4); }
+  .row .col-2-of-4 {
+    width: calc(2 * ((100% - 3 * 0.1rem) / 4 ) + 0.1rem); }
+  .row .col-3-of-4 {
+    width: calc(3 * ((100% - 3 * 0.1rem) / 4 ) + (2 * 0.1rem)); }
+  .row .col-4-of-4 {
+    width: 100%; }
+
+.header {
+  box-shadow: 0 3rem 6rem rgba(0, 0, 0, 0.1); }
+
+.left-box {
+  height: 95vh;
+  width: 100%;
+  position: relative;
+  background-color: rgba(231, 230, 230, 0.5); }
+
+.bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 95vh;
+  width: 100%;
+  z-index: -1;
+  opacity: .5;
+  overflow: hidden; }
+  .bg-video__content {
+    height: 100%;
+    width: 100%;
+    object-fit: cover; }
+
+.right-box {
+  height: 95vh;
+  width: 100%;
+  position: relative;
+  background-color: rgba(202, 17, 0, 0.5); }
+
+.bg-video-2 {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 95vh;
+  width: 100%;
+  z-index: -1;
+  opacity: .5;
+  overflow: hidden; }
+  .bg-video-2__content {
+    height: 100%;
+    width: 100%;
+    object-fit: cover; }
+
+.navigation {
+  background-color: #fff;
+  padding: 5rem;
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15); }
+  .navigation p {
+    text-align: center;
+    color: #000;
+    font-size: 1.8rem; }

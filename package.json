@@ -1,0 +1,14 @@
+{
+  "name": "Fulcrum",
+  "version": "1.0.0",
+  "description": " This is the fulcrum one page theme",
+  "main": "index.js",
+  "scripts": {
+    "compile:sass": "node-sass sass/main.scss css/main.css -w"
+  },
+  "author": "Akash",
+  "license": "MIT",
+  "dependencies": {
+    "node-sass": "^4.8.3"
+  }
+}
